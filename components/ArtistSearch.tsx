@@ -7,7 +7,11 @@ interface Artist {
   id: string;
 }
 
-const ArtistSearch = () => {
+interface ArtistSearchProps {
+  artistSearch: string;
+}
+
+const ArtistSearch = ({ artistSearch }: ArtistSearchProps) => {
   const [artists, setArtists] = useState<Artist[]>([]);
 
   useEffect(() => {
@@ -30,12 +34,13 @@ const ArtistSearch = () => {
 
   return (
     <div>
-      <h2>Artists:</h2>
+      {/* <h2>Artists:</h2> */}
       <ul>
         {artists.map((artist, index) => (
           <ArtistCard key={index} artist={artist} />
         ))}
       </ul>
+      <p>{artistSearch}</p>
     </div>
   );
 };

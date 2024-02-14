@@ -44,15 +44,17 @@ const GigsCard: React.FC<GigsCardProps> = ({ gigs }) => {
   const url = gigs.url;
 
   return (
-    <div>
-      <h2>Artist: {artistName}</h2>
-      <p>ID: {eventId}</p>
-      <p>URL: {url}</p>
+    <div className="gig">
+      <h2>{artistName}</h2>
+      {/* <p>ID: {eventId}</p> */}
       <p>Event: {eventName}</p>
+      <p>Date: {date}</p>
       <p>Venue: {venue}</p>
       <p>City: {city}</p>
       <p>Country: {country}</p>
-      <p>Date: {date}</p>
+      <a href={url} className="text-decoration: underline">
+        Link
+      </a>
     </div>
   );
 };

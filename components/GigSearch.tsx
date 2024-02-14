@@ -53,11 +53,11 @@ const GigSearch = () => {
   return (
     <div>
       <h2>Gigs: </h2>
-      <ul>
+      <div className="giggroup">
         {gigs.map((gig, index) => (
           <GigsCard key={index} gigs={gig} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
