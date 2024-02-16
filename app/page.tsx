@@ -16,10 +16,6 @@ export default function Home() {
     setArtistSearch(artistName);
   }
 
-  useEffect(() => {
-    console.log(artistSearch);
-  }, [artistSearch]);
-
   return (
     <>
       <div className="flex w-full max-w-sm m-3 items-center space-x-2">
@@ -29,7 +25,7 @@ export default function Home() {
         </Button>
       </div>
       <ArtistSearch artistSearch={artistSearch} />
-      <GigSearch />
+      {/* <GigSearch /> */}
     </>
   );
 }
