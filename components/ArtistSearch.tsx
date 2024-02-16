@@ -97,6 +97,9 @@ const ArtistSearch = ({ artistSearch }: ArtistSearchProps) => {
         {gigs.map((gig, index) => (
           <GigsCard key={index} gigs={gig} />
         ))}
+        {searchTerm != "" &&
+          gigs.length === 0 &&
+          "Sorry, no gigs were found for this artist!"}
       </div>
     </div>
   );
