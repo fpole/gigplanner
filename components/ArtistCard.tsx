@@ -15,7 +15,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
   return (
     <div>
       <h2>Aritst: {name}</h2>
-      <p>ID: {id}</p>
+      {/* <p>ID: {id}</p> */}
     </div>
   );
 };

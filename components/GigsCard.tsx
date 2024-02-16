@@ -45,7 +45,7 @@ const GigsCard: React.FC<GigsCardProps> = ({ gigs }) => {
 
   return (
     <div className="gig">
-      <h2>{artistName}</h2>
+      {/* <h2>Artist: {artistName}</h2> */}
       {/* <p>ID: {eventId}</p> */}
       <p>Event: {eventName}</p>
       <p>Date: {date}</p>
