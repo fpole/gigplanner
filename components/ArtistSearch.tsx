@@ -71,35 +71,33 @@ const ArtistSearch = ({ artistSearch, citySearch }: ArtistSearchProps) => {
 
   useEffect(() => {
     const id = artists.map((artist) => artist.id).join(",");
-    const fetchGigs = async () => {
-      try {
-        const response = await fetch(
-          `/api/andCity/?id=${id}&city=${citySearch}`
-        );
-        const data = await response.json();
-        setGigs(data.fetchedGigs);
-      } catch (error) {
-        console.error("Error fetching gigs:", error);
-      }
-    };
 
-    fetchGigs();
+    if (citySearch != "") {
+      const fetchGigCity = async () => {
+        try {
+          const response = await fetch(
+            `/api/andCity/?id=${id}&city=${citySearch}`
+          );
+          const data = await response.json();
+          setGigs(data.fetchedGigs);
+        } catch (error) {
+          console.error("Error fetching gigs:", error);
+        }
+      };
+      fetchGigCity();
+    } else {
+      const fetchGigs = async () => {
+        try {
+          const response = await fetch(`/api/gigs/?id=${id}`);
+          const data = await response.json();
+          setGigs(data.fetchedGigs);
+        } catch (error) {
+          console.error("Error fetching gigs:", error);
+        }
+      };
+      fetchGigs();
+    }
   }, [artists, citySearch]);
-
-  useEffect(() => {
-    const id = artists.map((artist) => artist.id).join(",");
-    const fetchGigs = async () => {
-      try {
-        const response = await fetch(`/api/gigs/?id=${id}`);
-        const data = await response.json();
-        setGigs(data.fetchedGigs);
-      } catch (error) {
-        console.error("Error fetching gigs:", error);
-      }
-    };
-
-    fetchGigs();
-  }, [artists]);
 
   return (
     <div>
@@ -112,9 +110,12 @@ const ArtistSearch = ({ artistSearch, citySearch }: ArtistSearchProps) => {
         {gigs.map((gig, index) => (
           <GigsCard key={index} gigs={gig} />
         ))}
-        {searchTerm != "" &&
-          gigs.length === 0 &&
-          "Sorry, no gigs were found for this artist!"}
+        {searchTerm != "" && gigs.length === 0 && (
+          <div className="text-center">
+            Sorry, no gigs were found for this artist! Try removing the city if
+            you added one or try another artist.
+          </div>
+        )}
       </div>
     </div>
   );
