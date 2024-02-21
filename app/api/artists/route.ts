@@ -1,7 +1,6 @@
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const artistSearch = searchParams.get("artistSearch");
-  // console.log(artistSearch);
   const API_KEY = process.env.TICKETMASTER_APIKEY;
 
   const res = await fetch(
