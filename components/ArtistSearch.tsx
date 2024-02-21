@@ -10,6 +10,7 @@ interface Artist {
 
 interface ArtistSearchProps {
   artistSearch: string;
+  citySearch: string;
 }
 
 interface Event {
@@ -41,7 +42,7 @@ interface Event {
   };
 }
 
-const ArtistSearch = ({ artistSearch }: ArtistSearchProps) => {
+const ArtistSearch = ({ artistSearch, citySearch }: ArtistSearchProps) => {
   const [artists, setArtists] = useState<Artist[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [gigs, setGigs] = useState<Event[]>([]);
@@ -72,10 +73,25 @@ const ArtistSearch = ({ artistSearch }: ArtistSearchProps) => {
     const id = artists.map((artist) => artist.id).join(",");
     const fetchGigs = async () => {
       try {
+        const response = await fetch(
+          `/api/andCity/?id=${id}&city=${citySearch}`
+        );
+        const data = await response.json();
+        setGigs(data.fetchedGigs);
+      } catch (error) {
+        console.error("Error fetching gigs:", error);
+      }
+    };
+
+    fetchGigs();
+  }, [artists, citySearch]);
+
+  useEffect(() => {
+    const id = artists.map((artist) => artist.id).join(",");
+    const fetchGigs = async () => {
+      try {
         const response = await fetch(`/api/gigs/?id=${id}`);
         const data = await response.json();
-
-        // console.log(data.fetchedGigs);
         setGigs(data.fetchedGigs);
       } catch (error) {
         console.error("Error fetching gigs:", error);
@@ -87,7 +103,6 @@ const ArtistSearch = ({ artistSearch }: ArtistSearchProps) => {
 
   return (
     <div>
-      {/* <h2>Artists:</h2> */}
       <ul>
         {artists.map((artist, index) => (
           <ArtistCard key={index} artist={artist} />
