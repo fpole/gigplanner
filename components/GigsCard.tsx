@@ -1,37 +1,7 @@
 import React from "react";
-
-interface Event {
-  name: string;
-  id: string;
-  url: string;
-  _embedded: {
-    attractions: [
-      {
-        name: string;
-      }
-    ];
-    venues: [
-      {
-        name: string;
-        city: {
-          name: string;
-        };
-        country: {
-          name: string;
-        };
-      }
-    ];
-  };
-  dates: {
-    start: {
-      localDate: string;
-    };
-  };
-}
-
-interface GigsCardProps {
-  gigs: Event;
-}
+import { GigsCardProps } from "../lib/interfaces";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const GigsCard: React.FC<GigsCardProps> = ({ gigs }) => {
   const eventName = gigs.name;
@@ -52,9 +22,16 @@ const GigsCard: React.FC<GigsCardProps> = ({ gigs }) => {
       <p>Venue: {venue}</p>
       <p>City: {city}</p>
       <p>Country: {country}</p>
-      <a href={url} className="text-decoration: underline">
+
+      {/* <a href={url} className="text-decoration: underline" target="_blank">
         Link
-      </a>
+      </a> */}
+
+      <Button asChild variant="secondary">
+        <Link href={url} target="_blank">
+          Click here for tickets!
+        </Link>
+      </Button>
     </div>
   );
 };

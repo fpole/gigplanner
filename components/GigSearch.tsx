@@ -1,35 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import GigsCard from "./GigsCard";
-
-interface Event {
-  name: string;
-  id: string;
-  url: string;
-  _embedded: {
-    attractions: [
-      {
-        name: string;
-      }
-    ];
-    venues: [
-      {
-        name: string;
-        city: {
-          name: string;
-        };
-        country: {
-          name: string;
-        };
-      }
-    ];
-  };
-  dates: {
-    start: {
-      localDate: string;
-    };
-  };
-}
+import { Event } from "../lib/interfaces";
 
 const GigSearch = () => {
   const [gigs, setGigs] = useState<Event[]>([]);
