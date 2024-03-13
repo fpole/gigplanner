@@ -75,13 +75,6 @@
   }
 }
 
-/* .giggroup {
-  background-color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0px;
-} */
-
 .giggroup {
   background-color: white;
   --w: 300px;
@@ -106,13 +99,22 @@
 }
 
 .artist {
-  background-color: rgba(15, 23, 42, 0.945);
+  background-color: rgba(15, 23, 42);
   color: white;
   margin: 10px;
   padding: 10px;
+  font-weight: 500;
   border-radius: 7.5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.artistimage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }

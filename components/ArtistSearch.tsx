@@ -2,45 +2,7 @@
 import { useState, useEffect } from "react";
 import ArtistCard from "./ArtistCard";
 import GigsCard from "./GigsCard";
-
-interface Artist {
-  name: string;
-  id: string;
-}
-
-interface ArtistSearchProps {
-  artistSearch: string;
-  citySearch: string;
-}
-
-interface Event {
-  name: string;
-  id: string;
-  url: string;
-  _embedded: {
-    attractions: [
-      {
-        name: string;
-      }
-    ];
-    venues: [
-      {
-        name: string;
-        city: {
-          name: string;
-        };
-        country: {
-          name: string;
-        };
-      }
-    ];
-  };
-  dates: {
-    start: {
-      localDate: string;
-    };
-  };
-}
+import { Artist, ArtistSearchProps, Event } from "../lib/interfaces";
 
 const ArtistSearch = ({ artistSearch, citySearch }: ArtistSearchProps) => {
   const [artists, setArtists] = useState<Artist[]>([]);
