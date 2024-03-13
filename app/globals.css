@@ -76,7 +76,6 @@
 }
 
 .giggroup {
-  background-color: white;
   --w: 300px;
   --n: 3;
   display: grid;
