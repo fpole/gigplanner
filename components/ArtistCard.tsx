@@ -9,7 +9,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
   return (
     <>
       <div className="artist">
-        <h1>Artist: {name}</h1>
+        <h1>{name}</h1>
         {/* <p>ID: {id}</p> */}
       </div>
       <div className="artistimage">

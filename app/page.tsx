@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import ArtistSearch from "../components/ArtistSearch";
 import { useState, useEffect } from "react";
+import { Nav } from "../components/Nav";
 
 export default function Home() {
   const [artistSearch, setArtistSearch] = useState("");
@@ -37,6 +38,7 @@ export default function Home() {
 
   return (
     <>
+      <Nav></Nav>
       <div className="flex m-3 justify-center items-center space-x-2">
         <Input id="searchInput" type="search" placeholder="Search Artist" />
         <Input id="searchInputCity" type="search" placeholder="Search City" />
