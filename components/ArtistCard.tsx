@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
   const { name, id } = artist;
-  const image = artist.images[1].url;
+  const image = artist.images[1]?.url;
 
   return (
     <>

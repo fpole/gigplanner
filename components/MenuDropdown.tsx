@@ -25,7 +25,7 @@ export function MenuDropdown() {
         </DropdownMenuItem>
 
         <DropdownMenuItem>
-          <Link href="/saved">Saved</Link>
+          <Link href="/favourites">Favourites</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

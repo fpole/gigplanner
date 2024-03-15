@@ -75,7 +75,7 @@
   }
 }
 
-.giggroup {
+/* .giggroup {
   --w: 350px;
   --n: 3;
   display: grid;
@@ -83,12 +83,11 @@
     auto-fit,
     minmax(clamp(100%/ (var(--n) + 1) + 0.1%, (var(--w) - 10vw), 100%), 1fr)
   );
-}
+} */
 
 .gig {
   background-color: rgb(90, 106, 122);
   color: white;
-  margin: 10px;
   padding: 10px;
   font-size: small;
   border-radius: 7.5px;
@@ -96,6 +95,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 13rem;
+  width: 100%;
+  max-width: 28rem;
 }
 
 .artist {

@@ -9,15 +9,18 @@ export function Nav() {
   const { theme } = useTheme();
   return (
     <nav className="flex flex-col w-screen bg-gray-100 gray-100 dark:bg-[#040c21] dark:drop-shadow-2xl">
-      <div className=" h-[60px] md:h-[84px] flex justify-between place-items-center p-8">
-        <Image
-          priority={false}
-          className="dark:invert p-[2.5px]"
-          height="40"
-          width="40"
-          alt="Gig Logo"
-          src="/favicon.ico"
-        />
+      <div className="h-[60px] md:h-[84px] flex justify-between place-items-center p-8">
+        <div className="flex">
+          <Image
+            priority={false}
+            className="dark:invert p-[2.5px]"
+            height="40"
+            width="40"
+            alt="Gig Logo"
+            src="/favicon.ico"
+          />
+          <h1 className="text-xl pt-1.5 font-mono">Search</h1>
+        </div>
         <div className="flex gap-4 justify-center items-center">
           <ModeToggle></ModeToggle>
           <MenuDropdown></MenuDropdown>

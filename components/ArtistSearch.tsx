@@ -68,7 +68,7 @@ const ArtistSearch = ({ artistSearch, citySearch }: ArtistSearchProps) => {
           <ArtistCard key={index} artist={artist} />
         ))}
       </ul>
-      <div className="giggroup">
+      <div className="grid grid-cols-1 justify-items-center lg:grid-cols-3  md:grid-cols-2 gap-3 px-3">
         {gigs.map((gig, index) => (
           <GigsCard key={index} gigs={gig} />
         ))}

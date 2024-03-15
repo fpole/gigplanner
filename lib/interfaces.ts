@@ -1,11 +1,9 @@
 export interface Artist {
   name: string;
   id: string;
-  images: [
-    {
-      url: string;
-    }
-  ];
+  images: {
+    url: string;
+  }[];
 }
 
 export interface ArtistCardProps {
