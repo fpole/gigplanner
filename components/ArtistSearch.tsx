@@ -73,9 +73,9 @@ const ArtistSearch = ({ artistSearch, citySearch }: ArtistSearchProps) => {
           <GigsCard key={index} gigs={gig} />
         ))}
         {searchTerm != "" && gigs.length === 0 && (
-          <div className="text-center">
-            Sorry, no gigs were found for this artist! Try removing the city if
-            you added one or try another artist.
+          <div className="px-3 py-2 m-6 rounded-md border text-md text-center">
+            Sorry, no gigs were found for this artist! <br /> Try removing the
+            city if you added one or try another artist.
           </div>
         )}
       </div>

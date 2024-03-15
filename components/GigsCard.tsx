@@ -2,6 +2,8 @@ import React from "react";
 import { GigsCardProps } from "../lib/interfaces";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Heart } from "lucide-react";
+import { useState } from "react";
 
 const GigsCard: React.FC<GigsCardProps> = ({ gigs }) => {
   const eventName = gigs.name;
@@ -13,8 +15,22 @@ const GigsCard: React.FC<GigsCardProps> = ({ gigs }) => {
   const date = gigs.dates.start.localDate;
   const url = gigs.url;
 
+  const [isFav, setIsFav] = useState(false);
+
+  function handleFav() {
+    setIsFav(!isFav);
+  }
+
   return (
     <div className="gig">
+      <div className="cursor-pointer relative">
+        <Heart
+          onClick={handleFav}
+          className={`h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all absolute right-1 top-1.5 ${
+            isFav ? "fill-white" : ""
+          }`}
+        />
+      </div>
       {/* <h2>Artist: {artistName}</h2> */}
       {/* <p>ID: {eventId}</p> */}
       <p>Event: {eventName}</p>
