@@ -1,5 +1,6 @@
 "use client";
 import { ModeToggle } from "./ModeToggle";
+import { MenuDropdown } from "./MenuDropdown";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Separator } from "@/components/ui/separator";
@@ -7,8 +8,8 @@ import { Separator } from "@/components/ui/separator";
 export function Nav() {
   const { theme } = useTheme();
   return (
-    <nav className="flex flex-col w-screen bg-gray-100 gray-100 dark:bg-[#040c21] drop-shadow-md dark:drop-shadow-2xl">
-      <div className=" h-[80px] md:h-[104px] flex justify-between place-items-center p-8">
+    <nav className="flex flex-col w-screen bg-gray-100 gray-100 dark:bg-[#040c21] dark:drop-shadow-2xl">
+      <div className=" h-[60px] md:h-[84px] flex justify-between place-items-center p-8">
         <Image
           priority={false}
           className="dark:invert p-[2.5px]"
@@ -19,6 +20,7 @@ export function Nav() {
         />
         <div className="flex gap-4 justify-center items-center">
           <ModeToggle></ModeToggle>
+          <MenuDropdown></MenuDropdown>
         </div>
       </div>
       <div className="w-screen">

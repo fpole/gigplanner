@@ -76,7 +76,7 @@
 }
 
 .giggroup {
-  --w: 300px;
+  --w: 350px;
   --n: 3;
   display: grid;
   grid-template-columns: repeat(
@@ -90,11 +90,12 @@
   color: white;
   margin: 10px;
   padding: 10px;
+  font-size: small;
   border-radius: 7.5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 230px;
+  height: 13rem;
 }
 
 .artist {

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import ArtistSearch from "../components/ArtistSearch";
 import { useState, useEffect } from "react";
 import { Nav } from "../components/Nav";
+import { Suspense } from "react";
 
 export default function Home() {
   const [artistSearch, setArtistSearch] = useState("");
@@ -48,15 +49,19 @@ export default function Home() {
       </div>
       <div
         className={`flex ${
-          pagePopulated ? "invisible h-0" : "visible"
-        } items-center justify-center w-full`}
+          pagePopulated
+            ? "invisible h-0"
+            : "visible px-3 py-2 m-6 rounded-md border"
+        } items-center justify-center text-md text-center`}
       >
-        <p className="text-md text-center">
-          Search for an artist to find their upcoming gigs! You can also add a
-          city to narrow down the search.
+        <p>
+          Search for an artist to find their upcoming gigs! <br /> You can also
+          add a city to narrow down the search.
         </p>
       </div>
-      <ArtistSearch artistSearch={artistSearch} citySearch={citySearch} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ArtistSearch artistSearch={artistSearch} citySearch={citySearch} />
+      </Suspense>
     </>
   );
 }

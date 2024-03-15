@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
   const { name, id } = artist;
-  const image = artist.images[0].url;
+  const image = artist.images[1].url;
 
   return (
     <>
@@ -13,7 +13,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
         {/* <p>ID: {id}</p> */}
       </div>
       <div className="artistimage">
-        <img src={image} alt={name} className="max-h-56" />
+        <img src={image} alt={name} className="max-h-52" />
       </div>
     </>
   );
