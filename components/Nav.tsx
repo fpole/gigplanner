@@ -4,13 +4,19 @@ import { MenuDropdown } from "./MenuDropdown";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Separator } from "@/components/ui/separator";
+import { useRouter } from "next/navigation";
 
 export function Nav() {
-  const { theme } = useTheme();
+  const router = useRouter();
+
+  const handleLogoClick = () => {
+    router.push("/");
+  };
+
   return (
     <nav className="flex flex-col w-screen bg-gray-100 gray-100 dark:bg-[#040c21] dark:drop-shadow-2xl">
       <div className="h-[60px] md:h-[84px] flex justify-between place-items-center p-8">
-        <div className="flex">
+        <div className="flex cursor-pointer" onClick={handleLogoClick}>
           <Image
             priority={false}
             className="dark:invert p-[2.5px]"
