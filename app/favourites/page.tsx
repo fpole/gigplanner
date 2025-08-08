@@ -65,7 +65,7 @@ export default function Saved() {
         <h1 className="text-xl mb-6">Your Saved Gigs</h1>
         {favourites.length === 0 ? (
           <div className="text-center py-8">
-            <p className="text-gray-500 text-md">No saved gigs yet!</p>
+            <p className="dark:text-white text-md">No saved gigs yet!</p>
           </div>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

@@ -63,11 +63,9 @@ export default function Home() {
           Get Gigs!
         </Button>
       </div>
-
-      {/* Error Message */}
       {errorMessage && (
         <div className="flex justify-center mb-4">
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-md text-sm max-w-md text-center dark:bg-red-900/20 dark:border-red-800 dark:text-red-300">
+          <div className="bg-red-500 border border-red-500 text-white px-4 py-2 rounded-md text-sm max-w-md text-center dark:red-500 dark:border-red-500 dark:text-white">
             {errorMessage}
           </div>
         </div>
