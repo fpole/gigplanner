@@ -1,4 +1,4 @@
-# GigPlanner Monorepo
+# GigPlanner
 
 A full-stack application for planning and discovering gigs, featuring a Next.js frontend and Python FastAPI backend.
 
