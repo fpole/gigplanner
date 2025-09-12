@@ -57,3 +57,4 @@ sdist/
 var/
 wheels/
 *.egg-info/
+frontend/.next/
