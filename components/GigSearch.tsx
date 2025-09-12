@@ -1,37 +1,37 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import GigsCard from "./GigsCard";
-import { Event } from "../lib/interfaces";
+'use client'
+import React, { useEffect, useState } from 'react'
+import { Event } from '../lib/interfaces'
+import GigsCard from './GigsCard'
 
 const GigSearch = () => {
-  const [gigs, setGigs] = useState<Event[]>([]);
+  const [gigs, setGigs] = useState<Event[]>([])
 
   useEffect(() => {
     const fetchGigs = async () => {
       try {
-        const response = await fetch(`/api/gigs`);
-        const data = await response.json();
+        const response = await fetch(`/api/gigs`)
+        const data = await response.json()
 
         // console.log(data.fetchedGigs);
-        setGigs(data.fetchedGigs);
+        setGigs(data.fetchedGigs)
       } catch (error) {
-        console.error("Error fetching gigs:", error);
+        console.error('Error fetching gigs:', error)
       }
-    };
+    }
 
-    fetchGigs();
-  }, []);
+    fetchGigs()
+  }, [])
 
   return (
     <div>
       <h2>Gigs: </h2>
-      <div className="giggroup">
+      <div className='giggroup'>
         {gigs.map((gig, index) => (
           <GigsCard key={index} gigs={gig} />
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default GigSearch;
+export default GigSearch

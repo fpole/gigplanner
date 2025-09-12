@@ -1,0 +1,99 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "files": {
+    "ignoreUnknown": false
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "useEditorconfig": true
+  },
+  "linter": {
+    "enabled": true,
+    "includes": ["src/**/*.ts", "src/**/*.tsx", "e2e/**/*.ts", "!**/*/generated.ts", "!**/*/*.stories.ts"],
+    "rules": {
+      "recommended": false,
+      "complexity": {
+        "noBannedTypes": "error",
+        "noUselessTypeConstraint": "error",
+        "noArguments": "error"
+      },
+      "correctness": {
+        "noChildrenProp": "error",
+        "noPrecisionLoss": "error",
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "off",
+        "useHookAtTopLevel": "warn",
+        "useJsxKeyInIterable": "error",
+        "noConstAssign": "off",
+        "noGlobalObjectCalls": "off",
+        "noInvalidConstructorSuper": "off",
+        "noSetterReturn": "off",
+        "noUndeclaredVariables": "off",
+        "noUnreachable": "off",
+        "noUnreachableSuper": "off",
+        "useValidTypeof": "off"
+      },
+      "security": { "noDangerouslySetInnerHtmlWithChildren": "error" },
+      "style": {
+        "noInferrableTypes": "error",
+        "noNamespace": "error",
+        "noNonNullAssertion": "warn",
+        "useArrayLiterals": "error",
+        "useAsConstAssertion": "error",
+        "useBlockStatements": "off",
+        "useConst": "error"
+      },
+      "suspicious": {
+        "noCommentText": "error",
+        "noDuplicateJsxProps": "error",
+        "noEmptyBlockStatements": "error",
+        "noExplicitAny": "warn",
+        "noExtraNonNullAssertion": "error",
+        "noMisleadingInstantiator": "error",
+        "useAdjacentOverloadSignatures": "error",
+        "useNamespaceKeyword": "error",
+        "noDuplicateClassMembers": "off",
+        "noDuplicateObjectKeys": "off",
+        "noDuplicateParameters": "off",
+        "noFunctionAssign": "off",
+        "noImportAssign": "off",
+        "noRedeclare": "off",
+        "noUnsafeNegation": "off",
+        "noVar": "error",
+        "useGetterReturn": "off"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
+    }
+  },
+  "html": { "formatter": { "selfCloseVoidElements": "always" } },
+  "assist": {
+    "enabled": true,
+    "actions": { "source": { "organizeImports": "on" } }
+  }
+}

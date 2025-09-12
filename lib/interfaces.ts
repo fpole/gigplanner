@@ -1,49 +1,49 @@
 export interface Artist {
-  name: string;
-  id: string;
+  name: string
+  id: string
   images: {
-    url: string;
-  }[];
+    url: string
+  }[]
 }
 
 export interface ArtistCardProps {
-  artist: Artist;
+  artist: Artist
 }
 
 export interface ArtistSearchProps {
-  artistSearch: string;
-  citySearch: string;
+  artistSearch: string
+  citySearch: string
 }
 
 export interface Event {
-  name: string;
-  id: string;
-  url: string;
+  name: string
+  id: string
+  url: string
   _embedded: {
     attractions: [
       {
-        name: string;
-      }
-    ];
+        name: string
+      },
+    ]
     venues: [
       {
-        name: string;
+        name: string
         city: {
-          name: string;
-        };
+          name: string
+        }
         country: {
-          name: string;
-        };
-      }
-    ];
-  };
+          name: string
+        }
+      },
+    ]
+  }
   dates: {
     start: {
-      localDate: string;
-    };
-  };
+      localDate: string
+    }
+  }
 }
 
 export interface GigsCardProps {
-  gigs: Event;
+  gigs: Event
 }

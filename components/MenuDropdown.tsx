@@ -1,3 +1,6 @@
+import { Menu } from 'lucide-react'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -5,29 +8,26 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Menu } from "lucide-react";
+} from '@/components/ui/dropdown-menu'
 
 export function MenuDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Menu className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100" />
-          <span className="sr-only">Menu</span>
+        <Button variant='outline' size='icon'>
+          <Menu className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100' />
+          <span className='sr-only'>Menu</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
-          <Link href="/">Search</Link>
+          <Link href='/'>Search</Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem>
-          <Link href="/favourites">Favourites</Link>
+          <Link href='/favourites'>Favourites</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }
