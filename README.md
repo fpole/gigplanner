@@ -1,15 +1,6 @@
 # GigPlanner
 
-A full-stack application for planning and discovering gigs, featuring a Next.js frontend and Python FastAPI backend.
-
-## Project Structure
-
-```
-GigPlanner/
-├── frontend/          # Next.js frontend application
-├── backend/           # Python FastAPI backend
-└── README.md         # This file
-```
+A full-stack application for planning and discovering gigs, featuring a Next.js frontend and Python backend.
 
 ### Frontend (Next.js)
 ```bash
@@ -19,7 +10,7 @@ npm run dev
 ```
 The frontend will be available at http://localhost:3000
 
-### Backend (Python FastAPI) - Coming Soon
+### Backend (Python FastAPI) - TBD
 ```bash
 cd backend
 source venv/bin/activate
@@ -29,7 +20,6 @@ uvicorn app.main:app --reload
 The backend will be available at http://localhost:8000
 
 ## Features
-
 - **Frontend**: 
   - Gig search and discovery
   - Artist search functionality
@@ -41,7 +31,6 @@ The backend will be available at http://localhost:8000
   - Ticketmaster API integration
 
 ## Development
-
 Run both applications simultaneously for full-stack development:
 
 1. **Terminal 1** (Frontend): `cd frontend && npm run dev`
